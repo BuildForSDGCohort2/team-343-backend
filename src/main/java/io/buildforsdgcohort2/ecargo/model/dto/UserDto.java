@@ -2,7 +2,6 @@ package io.buildforsdgcohort2.ecargo.model.dto;
 
 
 import io.buildforsdgcohort2.ecargo.model.entity.User;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +13,7 @@ import java.util.List;
 @Setter
 public class UserDto {
 
-    private  long id;
+    private long id;
     private String email;
     private String username;
     private String password;
@@ -51,20 +50,20 @@ public class UserDto {
     }
 
 
-    public static UserDto toUserDto(User user){
+    public static UserDto toUserDto(User user) {
         return new UserDto(user.getEmail(), user.getUsername(), user.getPassword(), user.getFirst_name(),
                 user.getLast_name(), user.getActivation_code(), user.getIsActivatedAt(), user.getCreateAt(), user.getLastLogin(),
                 user.getUpdateAt(), user.getLastSeenAt(), user.isActivated(), RoleDto.toDto(user.getRoles()));
     }
 
     public static List<UserDto> toDto(List<User> users) {
-        List<UserDto> userDtos = new ArrayList<>();
+        List<UserDto> usersDto = new ArrayList<>();
 
         for (User user : users) {
-            userDtos.add(UserDto.toUserDto(user));
+            usersDto.add(UserDto.toUserDto(user));
 
         }
 
-        return userDtos;
+        return usersDto;
     }
 }
