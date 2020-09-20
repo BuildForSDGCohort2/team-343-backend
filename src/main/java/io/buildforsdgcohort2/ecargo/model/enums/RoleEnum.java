@@ -5,10 +5,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public enum RoleEnum {
 
-    ROLE_ADMINS,
+    ROLE_ADMIN,
     ROLE_DRIVER,
-    ROLE_CLIENT,
-    ROLE_EMPLOYER
-
+    ROLE_CLIENT
 
 }

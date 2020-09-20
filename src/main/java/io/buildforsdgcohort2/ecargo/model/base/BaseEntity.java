@@ -2,21 +2,25 @@ package io.buildforsdgcohort2.ecargo.model.base;
 
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
+@NoArgsConstructor
+@MappedSuperclass
 public abstract class BaseEntity implements Serializable {
 
-    private static final long serialVersion = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
   @Override

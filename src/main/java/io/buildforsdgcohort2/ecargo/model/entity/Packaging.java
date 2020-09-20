@@ -10,23 +10,22 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "invoices")
+@Table(name = "packagings")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Invoice extends AuditableEntity<Long> {
+public class Packaging extends AuditableEntity<Long> {
 
     private static final long serialVersionUID = 1L;
 
+    private String name;
+    private String packaging_description;
+    private Integer quantity;
+    private Integer weight;
+    private Integer height;
+    private Integer width;
+    private Integer length;
+    private Integer num_boxes;
+    private Integer num_pallets;
     private String status;
-    private Double total;
-    private Double subTotal;
-    private Double paid;
-    private Double discount;
-    private Double tax;
-    private Double taxDiscount;
-    private int is_tax_exempt;
-    private int payment_method;
-    private User client;
-    private User driver;
-    private ShipmentOrder shipmentOrder;
+
 }

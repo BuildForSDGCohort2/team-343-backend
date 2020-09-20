@@ -11,11 +11,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
+
 @Getter
 @Setter
-public class AuditableEntity<U> extends BaseEntity {
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+public  abstract class AuditableEntity<U> extends BaseEntity {
 
     @Column(name = "create_by")
     @CreatedBy
